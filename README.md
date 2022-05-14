@@ -23,4 +23,6 @@ Migrations:
 Um histórico de tudo que estamos rodando dentro do banco de dados.
 Ajuda a mandar o banco de dados atualizado.
 Todos da equipe conseguem utilizar um banco de dados atualizado, para que não tenha conflitos. 
-
+Criando migrations: yarn typeorm migration:create -n NomeMigration
+Rodando migrations: yarn typeorm migration:run
+Reverter a ultima migration executada: yarn typeorm migration:revert
