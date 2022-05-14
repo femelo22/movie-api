@@ -12,6 +12,11 @@ dependencias utilizadas
 - yarn add typeorm reflect-metadata pg
 (reflect-metadata é para utilizarmos notações no projeto, e o pg é o driver do postgres)
 
+- yarn add uuid
+(para gerar os uuid v4)
+
+- yarn add @types/uuid -D
+(tipagem do uuid)
 
 -- configurando para o ts-node-dev rodar nossa aplicação, fazer as conversões, e usando o --transpile-only para desativar as checagens automáticas
 "scripts": {
