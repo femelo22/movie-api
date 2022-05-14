@@ -18,3 +18,9 @@ dependencias utilizadas
      "dev": "ts-node-dev --transpile-only src/server.ts"
 }
 
+
+Migrations:
+Um histórico de tudo que estamos rodando dentro do banco de dados.
+Ajuda a mandar o banco de dados atualizado.
+Todos da equipe conseguem utilizar um banco de dados atualizado, para que não tenha conflitos. 
+
