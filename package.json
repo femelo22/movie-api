@@ -1,0 +1,8 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/femelo22/movie-api.git",
+  "author": "femelo22 <luiz123jfmg@gmail.com>",
+  "license": "MIT"
+}
