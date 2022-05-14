@@ -8,3 +8,13 @@ dependencias utilizadas
 
 - yarn tsc --init 
 (inicializar o ts dentro da aplicação)
+
+- yarn add typeorm reflect-metadata pg
+(reflect-metadata é para utilizarmos notações no projeto, e o pg é o driver do postgres)
+
+
+-- configurando para o ts-node-dev rodar nossa aplicação, fazer as conversões, e usando o --transpile-only para desativar as checagens automáticas
+"scripts": {
+     "dev": "ts-node-dev --transpile-only src/server.ts"
+}
+
