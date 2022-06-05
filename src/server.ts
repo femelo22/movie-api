@@ -1,10 +1,11 @@
-// coração da aplicação, onde vai estar o servidor rodando a aplicação
-import "reflect-metadata";
+import 'reflect-metadata';
+import './database';
 import express from 'express';
-import "./database"; // para importar a conexão com o banco de dados
-import { routes } from "./routes";
+import { routes } from './routes';
 
 const app = express();
+
+app.use(express.json());
 
 app.use(routes);
 

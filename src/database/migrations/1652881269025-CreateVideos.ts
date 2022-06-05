@@ -1,9 +1,9 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateVideos1652569914797 implements MigrationInterface {
+export class CreateVideos1652881269025 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.createTable(
+         await queryRunner.createTable(
             new Table({
                 name: "videos",
                 columns: [
@@ -15,7 +15,7 @@ export class CreateVideos1652569914797 implements MigrationInterface {
                     {
                         name: "name",
                         type: "varchar",
-                        isUnique: true
+                        isUnique: true,
                     },
                     {
                         name: "description",
@@ -34,17 +34,18 @@ export class CreateVideos1652569914797 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     },
-                ],
+                ], //referencia para a tabela de categorias
                 foreignKeys: [
                     {
                         name: "fk_videos_category",
                         columnNames: ["category_id"],
                         referencedTableName: "categories",
-                        referencedColumnNames: ["id"] //coluna dentro da tabela de categorias
+                        referencedColumnNames: ["id"]
                     }
                 ]
             }),
         );
+        
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {

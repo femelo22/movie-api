@@ -1,34 +1,38 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 import { Category } from "./Category";
 
 @Entity("videos")
 export class Video {
-    @PrimaryColumn()
-    id: string;
 
-    @Column()
-    name: string;
+  @PrimaryColumn()
+  id: string;
 
-    @Column()
-    description: string;
+  @ManyToOne(() => Category) //saber que é a referencia
+  @JoinColumn({ name: "category_id" })
+  category: Category;
 
-    @Column()
-    duration: number;
+  @Column()
+  category_id: string; //auxiliar 
 
-    @Column()
-    category_id: string;
+  @Column()
+  name: string;
 
-    @ManyToOne(() => Category)
-    @JoinColumn({ name: "category_id"})
-    category: Category;
+  @Column()
+  description: string;
 
-    @CreateDateColumn("created_at")
-    createdAt: Date;
+  @Column()
+  duration: number;
 
-    constructor() {
-        if(!this.id) {
-            this.id = uuid();
-        }
+  @CreateDateColumn({
+    name: "created_at"
+  })
+  createdAt: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuid()
     }
+  }
+
 }
